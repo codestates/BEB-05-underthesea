@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ethers } from "ethers"
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
+import file_upload from './file_upload.png';
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
 const Create = ({ marketplace, nft }) => {
@@ -47,53 +48,89 @@ const Create = ({ marketplace, nft }) => {
 
     return (
         <div className="container-fluid mt-5">
+            <h1><b>Create New Item</b></h1>
+            <br />
             <div className="row">
-                <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '1000px' }}>
+                <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '600px' }}>
                     <div className="content mx-auto">
-                        <h1><b>Create New Item</b></h1>
                         <div>
                             <small>
                                 <span style={{ color: 'red' }}>* </span>
                                 <span style={{ color: 'grey' }}>Required fields</span>
                             </small>
                         </div>
-                        
+                        <br />
                         <Row className="g-4">
                             <div>
-                                <strong>
-                                    <span>Image, Video, Audio, or 3D Model</span>
-                                    <span style={{ color: 'red' }}> *</span>
-                                </strong>
-                                <div><small style={{ color: 'grey' }}>
-                                    File types supported: JPG, PNG, GIT, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB
-                                </small></div>
+                                <p>
+                                    <strong>
+                                        <span>Image, Video, Audio, or 3D Model</span>
+                                        <span style={{ color: 'red' }}> *</span>
+                                    </strong>
+                                    <small>
+                                        <div style={{ color: 'grey' }}>File types supported: JPG, PNG, GIT, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</div>
+                                    </small>
+                                </p>
+                                <label for={"file-form"}>
+                                    <img src={file_upload} width="80" height="80" alt="drag" class="img-rounded" />
+                                </label>
                                 <Form.Control
                                 type="file"
                                 name="file"
+                                id="file-form"
+                                style={{ display:"none" }}
                                 onChange={uploadToIPFS}
                                 />
                             </div>
-                            
-                            <Form.Control
+                            <br />
+                            <div>
+                                <p>
+                                    <strong>
+                                        <span>Name</span>
+                                        <span style={{ color: 'red' }}> *</span>
+                                    </strong>
+                                </p>
+                                <Form.Control
                                 onChange={(e) => setName(e.target.value)}
                                 size="lg"
                                 type="text"
-                                placeholder="Name"
-                            />
-                            <Form.Control
+                                placeholder="Item Name"
+                                />
+                            </div>
+                            <br />
+                            <div>
+                                <p>
+                                    <strong>
+                                        <span>Description</span> 
+                                    </strong>
+                                    <small style={{ color: 'grey' }}>
+                                        <p>The description will be included on the item's detail page underneath its image. </p>
+                                    </small>
+                                </p>
+                                <Form.Control
                                 onChange={(e) => setDescription(e.target.value)}
                                 size="lg"
                                 type="textarea"
                                 placeholder="Description"
-                            />
-                            <Form.Control
+                                />
+                            </div>
+                            <br />
+                            <div>
+                                <p>
+                                    <strong>
+                                        <span>Price in ETH</span>
+                                    </strong>
+                                </p>
+                                <Form.Control
                                 onChange={(e) => setPrice(e.target.value)}
                                 size="lg"
                                 type="number"
                                 placeholder="Price in ETH"
-                            />
+                                />
+                            </div>
+                            
                             <div className="d-grid px-0">
-                                <Button onClick={createNFT} variant="primary" size="lg">
+                                <Button onClick={createNFT} variant="primary" size="lg" >
                                     Create & ListNFT!
                                 </Button>
                             </div>
