@@ -50,12 +50,30 @@ const Create = ({ marketplace, nft }) => {
             <div className="row">
                 <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '1000px' }}>
                     <div className="content mx-auto">
+                        <h1><b>Create New Item</b></h1>
+                        <div>
+                            <small>
+                                <span style={{ color: 'red' }}>* </span>
+                                <span style={{ color: 'grey' }}>Required fields</span>
+                            </small>
+                        </div>
+                        
                         <Row className="g-4">
-                            <Form.Control
+                            <div>
+                                <strong>
+                                    <span>Image, Video, Audio, or 3D Model</span>
+                                    <span style={{ color: 'red' }}> *</span>
+                                </strong>
+                                <div><small style={{ color: 'grey' }}>
+                                    File types supported: JPG, PNG, GIT, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB
+                                </small></div>
+                                <Form.Control
                                 type="file"
                                 name="file"
                                 onChange={uploadToIPFS}
-                            />
+                                />
+                            </div>
+                            
                             <Form.Control
                                 onChange={(e) => setName(e.target.value)}
                                 size="lg"

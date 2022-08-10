@@ -19,7 +19,7 @@ import MyPurchases from './MyPurchases';
 import { Spinner } from 'react-bootstrap';
 
 function App() {
-  const[loading, setLoading] = useState(true);
+  const[loading, setLoading] = useState(false); //true임
   const [account, setAccount] = useState(null);
   const [nft, setNFT] = useState({});
   const [marketplace, setMarketplace] = useState({});
