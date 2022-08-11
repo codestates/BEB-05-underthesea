@@ -14,7 +14,7 @@ import NFTAbi from '../contractsData/NFT.json';
 import NFTAddress from '../contractsData/NFT-address.json';
 import Home from './Home';
 import Create from './Create';
-import MyListedItem from './MyListedItems';
+import MyListedItem from './MyListedItem';
 import MyPurchases from './MyPurchases';
 import { Spinner } from 'react-bootstrap';
 
