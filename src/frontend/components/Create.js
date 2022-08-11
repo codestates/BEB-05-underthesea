@@ -72,7 +72,7 @@ const Create = ({ marketplace, nft }) => {
                                     </small>
                                 </p>
                                 <label for={"file-form"}>
-                                    <img src={file_upload} width="80" height="80" alt="drag" class="img-rounded" />
+                                    <img src={file_upload} width="80px" height="80"px alt="drag" class="img-rounded" />
                                 </label>
                                 <Form.Control
                                 type="file"
@@ -128,7 +128,7 @@ const Create = ({ marketplace, nft }) => {
                                 placeholder="Price in ETH"
                                 />
                             </div>
-                            
+                            <br />
                             <div className="d-grid px-0">
                                 <Button onClick={createNFT} variant="primary" size="lg" >
                                     Create & ListNFT!

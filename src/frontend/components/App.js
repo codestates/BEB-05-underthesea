@@ -8,10 +8,10 @@ import { useState } from 'react';
 // ethers 라이브러리 임포트
 import { ethers } from "ethers";
 // contractsData 임포트
-// import MarketplaceAbi from '../contractsData/Marketplace.json';
-// import MarketplaceAddress from '../contractsData/Marketplace-address.json';
-// import NFTAbi from '../contractsData/NFT.json';
-// import NFTAddress from '../contractsData/NFT-address.json';
+import MarketplaceAbi from '../contractsData/Marketplace.json';
+import MarketplaceAddress from '../contractsData/Marketplace-address.json';
+import NFTAbi from '../contractsData/NFT.json';
+import NFTAddress from '../contractsData/NFT-address.json';
 import Home from './Home';
 import Create from './Create';
 import MyListedItem from './MyListedItems';
@@ -19,7 +19,7 @@ import MyPurchases from './MyPurchases';
 import { Spinner } from 'react-bootstrap';
 
 function App() {
-  const[loading, setLoading] = useState(false); //true임
+  const[loading, setLoading] = useState(true); //true임
   const [account, setAccount] = useState(null);
   const [nft, setNFT] = useState({});
   const [marketplace, setMarketplace] = useState({});
@@ -38,11 +38,11 @@ function App() {
   }
   const loadContracts = async (signer) => {
     // Get deployed copies of contracts
-    // const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
-    // setMarketplace(marketplace)
-    // const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
-    // setNFT(nft)
-    // setLoading(false)
+    const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
+    setMarketplace(marketplace)
+    const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
+    setNFT(nft)
+    setLoading(false)
   }
 
   return (
