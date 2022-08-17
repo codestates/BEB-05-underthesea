@@ -1,6 +1,6 @@
 # UnderTheSea
 
-## BEB 05 first Project Team 02
+### BEB 05 first Project Team 02
 
 ## 팀 소개
 
@@ -33,7 +33,8 @@
 
 [https://github.com/codestates/BEB-05-underthesea](https://github.com/codestates/BEB-05-underthesea)
 
----
+ 
+ 
 
 ## 구현 기능
 
@@ -57,7 +58,8 @@
 - [ ]  사용자는 nft를 고정된 가격에 구매하거나 경매할 수 있다
 - [ ]  사용자는 카테고리의 Explore에서 nft 조회 방식을 선택할 수 있다
 
----
+ 
+ 
 
 ## 시나리오
 
@@ -98,7 +100,8 @@
 - 작가별 NFT 페이지 조회
 - market place 정렬 기능 (가격순, 최신순 등)
 
----
+ 
+ 
 
 ## To Do
 
@@ -160,18 +163,22 @@
 - [ ]  구매한 아이템의 메타데이타를 구매 항목 리스트에 업로드
 - [ ]  Home 화면 수정 및 UI 구축
 
----
+ 
+ 
 
-### Flow Chart
+## Flow Chart
 
 ![UnderTheSea Flowchart drawio](https://user-images.githubusercontent.com/99964401/184828609-5bbb5b79-2f2d-4819-96b6-e8f41d8e45ea.png)
 
----
+ 
+ 
 
-### Install
+## Install
 
 1. git clone 
 2. npm install
 3. npm start
 
----
+ 
+ 
+ 
